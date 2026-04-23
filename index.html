@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Salon</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#050505] flex flex-col items-center justify-start p-6 font-sans selection:bg-gray-700 relative z-0 overflow-x-hidden">
+    
+    <div class="max-w-md w-full flex flex-col items-center text-center pt-8 pb-12 z-10">
+        
+        <div class="w-full flex justify-center mb-6 animate-fadeIn">
+            <img 
+                id="main-logo"
+                src="logo.png" 
+                alt="Style Salon Barbershop" 
+                onerror="showFallback()"
+                class="w-40 h-40 md:w-48 md:h-48 object-cover rounded-full border border-gray-800 shadow-[0_10px_30px_rgba(255,255,255,0.05)] bg-black"
+            />
+            
+            <div 
+                id="fallback-logo"
+                style="display: none;"
+                class="w-40 h-40 md:w-48 md:h-48 flex-col items-center justify-center border border-gray-800 rounded-full bg-gradient-to-b from-[#111] to-black drop-shadow-[0_10px_30px_rgba(255,255,255,0.05)]"
+            >
+               <i data-lucide="user" class="w-12 h-12 text-gray-600 mb-2"></i>
+               <span class="text-xs text-gray-500">חסרה תמונה</span>
+               <span class="text-[10px] text-gray-600 mt-1">logo.png</span>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center justify-center select-none mb-10" dir="ltr">
+            <h1 class="text-4xl md:text-5xl font-serif tracking-[0.1em] text-white drop-shadow-sm mb-3">
+                STYLE SALON
+            </h1>
+            <div class="flex items-center gap-4 w-full justify-center opacity-70">
+                <div class="h-px w-8 bg-gray-500"></div>
+                <h2 class="text-xs md:text-sm font-light tracking-[0.3em] text-gray-300 uppercase">
+                    By Shay Naftali
+                </h2>
+                <div class="h-px w-8 bg-gray-500"></div>
+            </div>
+        </div>
+
+        <div class="space-y-3 mb-12">
+            <div class="flex gap-2 justify-center mb-3 text-[#D4AF37]">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <h3 class="text-2xl font-normal text-white tracking-wide">
+                אהבת את הלוק החדש?
+            </h3>
+            <p class="text-base font-light text-gray-400">
+                הפרגון שלך שווה לנו המון.
+            </p>
+        </div>
+
+        <div class="w-full space-y-4 px-2">
+            
+            <a 
+                href="https://links.payboxapp.com/te1PzOE311b" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="group flex items-center justify-center gap-3 w-full bg-[#00AEEF] hover:bg-[#009bd6] transition-colors duration-300 text-white rounded-sm py-4 px-6 shadow-lg shadow-[#00AEEF]/20"
+            >
+                <i data-lucide="credit-card" class="w-5 h-5 group-hover:scale-110 transition-transform duration-300 stroke-[1.5]"></i>
+                <span class="text-lg font-medium tracking-wide">לתשלום דרך PayBox</span>
+            </a>
+
+            <a 
+                href="https://calmark.io/p/eTjff" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="group flex items-center justify-center gap-3 w-full bg-white text-black hover:bg-gray-200 transition-colors duration-300 rounded-sm py-4 px-6 shadow-lg"
+            >
+                <i data-lucide="calendar-check" class="w-5 h-5 stroke-[1.5]"></i>
+                <span class="text-lg font-medium tracking-wide">לאתר ולקביעת תור</span>
+            </a>
+
+            <a 
+                href="https://easy.co.il/s/HEcHWR" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="group flex items-center justify-center gap-3 w-full bg-transparent border border-gray-700 hover:border-white transition-colors duration-300 text-gray-300 hover:text-white rounded-sm py-4 px-6"
+            >
+                <i data-lucide="message-square-heart" class="w-5 h-5 group-hover:scale-110 transition-transform duration-300 stroke-[1.5]"></i>
+                <span class="text-lg font-light tracking-wide">השארת ביקורת ב-easy</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        function showFallback() {
+            document.getElementById('main-logo').style.display = 'none';
+            document.getElementById('fallback-logo').style.display = 'flex';
+        }
+        
+        // ציור האייקונים על המסך
+        lucide.createIcons();
+    </script>
+</body>
+</html>
